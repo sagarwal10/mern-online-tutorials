@@ -1,0 +1,5 @@
+{
+  "mongoURI":
+  "mongodb+srv://testuser:testuser123@booklist.sn7qi.mongodb.net/booklist?retryWrites=true&w=majority"
+}
+
