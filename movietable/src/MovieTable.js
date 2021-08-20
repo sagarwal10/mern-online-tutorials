@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Table, NacLink } from "react-bootstrap";
-import ModalOverview from "ModalOverview"; 
+import ModalOverview from "../src/ModalOverview"; 
 
 const MovieTable = props => {
  const [modalShow, setModalShow] = useState(false);
@@ -10,10 +10,12 @@ const MovieTable = props => {
  return (
    <div style={{ width: "90%", margin: "0 auto"}}>
      <h2 style={{textAlign: "center", margin: "20px auto auto"}}>
-       <Table variant="default"
-         style={{width: "100%", margin: "20px auto"}}
-	 striped bordered responsive>
-	<thead>
+       Popular Movies for { new Date(Date.now()).toLocaleDateString()}
+     </h2>
+     <Table variant="default"
+       style={{width: "100%", margin: "20px auto"}}
+       striped bordered responsive>
+       <thead>
 	  <tr>
 	   {keys.map(heading => {
 	      return <td key={heading}>{heading}</td>;
@@ -29,13 +31,13 @@ const MovieTable = props => {
 		<td>{movie.release_date}</td>
 		<td>
 		  <NavLink value={movie.id} onClick={() => {
-		    setModalShow(movie.id)}>
+		    setModalShow(movie.id)}} >
 		    Details
 		  </NavLink>
 		  <ModalOverview movie={movie}
 				 show={modalShow === movie.id}
 				 onHide={()=>setModalShow(false)} />
-		/td>
+		</td>
 	      </tr>
 	    );
 	  })}

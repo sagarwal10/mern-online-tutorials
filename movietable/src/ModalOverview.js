@@ -19,7 +19,7 @@ const ModalOverview = props => {
         <p> Popularity: {props.movie.popularity}</p>
 	<p> Votes: {props.movie.vote_count}</p>
       </Modal.Body>
-    <Modal>
+    </Modal>
   );
 }
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 
-import ModalLogin from './ModalLogin';
 
 const Navigation = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -18,7 +17,7 @@ const Navigation = () => {
 	    onClick={() => setModalShow(true)}>
 	    Login
 	  </Nav.Link>
-	  <ModalLogin show={modelShow} onHide={()=>setModalShow(false)} />
+	  // <ModalLogin show={modelShow} onHide={()=>setModalShow(false)} />
 	  <Nav.Link href="#link">Link</Nav.Link>
 	  <NavDropdown title="Sample Dropdown" id="basic-nav-dropdown">
 	    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

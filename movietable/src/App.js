@@ -1,30 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap'; 
-import Navigation from 'Navigation';
-import MovieTable from 'MovieTable';
-import MovieAccordion from 'MoveAccordion';
+import { Container } from 'react-bootstrap'; 
+import Navigation from '../src/Navigation';
+import MovieTable from '../src/MovieTable';
+import MovieAccordion from '../src/MovieAccordion';
 
 const [movies, setMovies] = useState([]);
 const [err, setErr] = useState("");
 const [errBool, setErrBool] = useState(false);
 const [loading, setLoading] = useState(true); 
 
-let URL = https://api.themoviedb.org/3/movie/550?api_key=df632ef0878241f1bb9d9f851a1f5bde;
-
-const fetchMovies = (url) => {
-  axios.get(url)
-       .then(response => {
-         setMovies(response.data.results);
-	 setLoading(false);
-       })
-       .catch(err => {
-         setErr(err.message);
-	 setErrBool(true);
-	 setLoading(false);
-       });
-} 
+let URL = 'https://api.themoviedb.org/3/movie/550?api_key=df632ef0878241f1bb9d9f851a1f5bde';
 
 const fetchMovies = (url) => {
  axios.get(url)
